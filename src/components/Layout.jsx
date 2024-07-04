@@ -15,7 +15,7 @@ export default function Layout({ children }) {
   return (
     <div class="container justify-content-center">
        <Image 
-            src="/logo.png" 
+            src="/logo.PNG" 
             height='180px'
             width='458px'    
           />

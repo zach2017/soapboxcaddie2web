@@ -1,14 +1,24 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col , Image , Button} from 'react-bootstrap';
 
 export default function Home() {
   return (
-    <Container>
-      <Row>
-        <Col>
-          <h1>Welcome to the Home Page</h1>
-          <p>This is a simple authentication demo using Vite, React, and Bootstrap.</p>
-        </Col>
-      </Row>
-    </Container>
+    <div class='container bg-transparent'  >
+      <Container >
+        <Row>
+          
+          <Col>
+            <h1>Welcome to the Soapbox Caddie</h1>
+            <p>Choose Peace. Not Laundry.</p>
+            <hr />
+            <a href="/login" class="btn btn-primary">Login</a>
+            <hr/>
+          </Col>
+          <hr/>
+          <Image 
+            src="/bannerworks.png"     
+          />
+        </Row>
+      </Container>
+    </div>
   );
 }

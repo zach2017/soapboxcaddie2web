@@ -38,7 +38,7 @@ export default function Login() {
       
       {step === 'phone' ? (
         <Form.Group className="mb-3" controlId="formBasicPhone">
-          <Form.Label>Phone Number</Form.Label>
+          <Form.Label>Mobile Phone Number</Form.Label>
           <Form.Control 
             type="tel" 
             placeholder="Enter phone number" 

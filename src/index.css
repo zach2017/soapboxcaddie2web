@@ -6,11 +6,15 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
+  background-image: url('/laundromat.jpg');
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  background-color: white; /* Set background color to white */
 }
 
 a {
@@ -28,6 +32,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url('/laundromat.jpg');
 }
 
 h1 {
@@ -63,6 +68,6 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #f0d9d9;
   }
 }

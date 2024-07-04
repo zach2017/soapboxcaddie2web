@@ -1,7 +1,8 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import React, { useState } from 'react';
 import { Form, FormGroup, FormSelect } from 'react-bootstrap';
-import BuyButton from '../../components/BuyButton';
+import InHomeBuyButton from '../../components/InHomeBuyButton';
+import MobilePickupBuyButton from '../../components/MobilePickupBuyButton';
 
 export default function LaundryForm() {
 
@@ -97,7 +98,7 @@ export default function LaundryForm() {
               <div className="service-details in-home-details">
                 <h4>In Home Laundry Details</h4>
                 <p>Our professionals will come to your home to do your laundry.</p>
-                <BuyButton />
+                <InHomeBuyButton />
               </div>
             )}
 
@@ -105,7 +106,7 @@ export default function LaundryForm() {
               <div className="service-details mobile-details">
                 <h4>Mobile Pickup/Dropoff Details</h4>
                 <p>We'll pick up your laundry and return it clean and folded.</p>
-                <BuyButton />
+                <MobilePickupBuyButton />
               </div>
             )}
           </Form>

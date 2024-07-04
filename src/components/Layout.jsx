@@ -27,8 +27,8 @@ export default function Layout({ children }) {
               {twilioAuth.isAuthenticated ? (
                 <>
                   <NavLink className="nav-link" to="/">Home</NavLink>
-                  <NavLink className="nav-link"  to="/protected1">Laundry Service</NavLink>
-                  <NavLink className="nav-link" to="/protected2">Become a Caddie</NavLink>
+                  <NavLink className="nav-link"  to="/laundryservice">Laundry Service</NavLink>
+                  <NavLink className="nav-link" to="/caddieservice">Become a Caddie</NavLink>
                 </>
               ) : null}
             </Nav>

@@ -26,7 +26,7 @@ export default function Login() {
     setError('');
     const success = await twilioAuth.verifyCode(verificationCode);
     if (success) {
-      navigate('/protected1');
+      navigate('/laundryservice');
     } else {
       setError('Invalid verification code. Please try again.');
     }
@@ -38,7 +38,7 @@ export default function Login() {
       
       {step === 'phone' ? (
         <Form.Group className="mb-3" controlId="formBasicPhone">
-          <Form.Label>Mobile Phone Number</Form.Label>
+          <Form.Label>MobilePhone Number</Form.Label>
           <Form.Control 
             type="tel" 
             placeholder="Enter phone number" 

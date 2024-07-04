@@ -14,7 +14,7 @@ export default function Home() {
           </Col>
           <hr/>
           <Image 
-            src="/bannerworks.png"     
+            src="/bannerworks.PNG"     
           />
         </Row>
       </Container>

@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import React, { useState } from 'react';
 import { Form, FormGroup, FormSelect } from 'react-bootstrap';
+import BuyButton from '../../components/BuyButton';
 
 export default function LaundryForm() {
 
@@ -53,6 +54,7 @@ export default function LaundryForm() {
     <Container>
       <Row>
         <Col>
+
           <Form className="laundry-form" onSubmit={handleSubmit}>
             <h2>Laundry Service Form</h2>
             <FormGroup as={Col} >
@@ -91,6 +93,21 @@ export default function LaundryForm() {
                 <option value="mobile">Mobile Pickup/Dropoff</option>
               </FormSelect>
             </FormGroup>
+            {formData.laundryService === 'in-home' && (
+              <div className="service-details in-home-details">
+                <h4>In Home Laundry Details</h4>
+                <p>Our professionals will come to your home to do your laundry.</p>
+                <BuyButton />
+              </div>
+            )}
+
+            {formData.laundryService === 'mobile' && (
+              <div className="service-details mobile-details">
+                <h4>Mobile Pickup/Dropoff Details</h4>
+                <p>We'll pick up your laundry and return it clean and folded.</p>
+                <BuyButton />
+              </div>
+            )}
           </Form>
         </Col>
       </Row>

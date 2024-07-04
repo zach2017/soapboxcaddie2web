@@ -9,8 +9,7 @@ export default function Home() {
           <Col>
             <h1>Welcome to the Soapbox Caddie</h1>
             <p>Choose Peace. Not Laundry.</p>
-            <hr />
-            <a href="/login" class="btn btn-primary">Login</a>
+           
             <hr/>
           </Col>
           <hr/>

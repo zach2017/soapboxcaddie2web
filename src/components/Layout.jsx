@@ -26,7 +26,7 @@ export default function Layout({ children }) {
             <Nav className="me-auto">
               {twilioAuth.isAuthenticated ? (
                 <>
-                   <NavLink className="nav-link" to="/">Home</NavLink>
+                  <NavLink className="nav-link" to="/">Home</NavLink>
                   <NavLink className="nav-link"  to="/protected1">Laundry Service</NavLink>
                   <NavLink className="nav-link" to="/protected2">Become a Caddie</NavLink>
                 </>
@@ -35,7 +35,7 @@ export default function Layout({ children }) {
             {twilioAuth.isAuthenticated ? (
               <Button variant="outline-primary" onClick={handleSignOut}>Sign out</Button>
             ) : (
-              <Nav.Link className="nav-link"  as={Link} to="/login">Login</Nav.Link>
+              <NavLink className="nav-link"  as={Link} to="/login">Login</NavLink>
             )}
           </Navbar.Collapse>
         </Container>

@@ -2,9 +2,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import React, { useState } from 'react';
 import { Form, FormGroup, FormSelect } from 'react-bootstrap';
 
+export default function LaundryForm() {
 
-export default function ProtectedPage2() {
-    
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -55,12 +54,12 @@ export default function ProtectedPage2() {
       <Row>
         <Col>
           <Form className="laundry-form" onSubmit={handleSubmit}>
-            <h2>Become A Caddie</h2>
+            <h2>Laundry Service Form</h2>
             <FormGroup as={Col} >
               <label htmlFor="firstName">First Name</label>
               <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} required />
             </FormGroup>
-            <FormGroup as={Col}>
+            <FormGroup as={Col} >
               <label htmlFor="lastName">Last Name</label>
               <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} required />
             </FormGroup>
@@ -83,6 +82,14 @@ export default function ProtectedPage2() {
             <FormGroup>
               <label htmlFor="zipcode">Home Zipcode</label>
               <input type="text" id="zipcode" name="zipcode" value={formData.zipcode} onChange={handleChange} pattern="[0-9]{5}" />
+            </FormGroup>
+            <FormGroup>
+              <label htmlFor="laundryService">Laundry Service Type</label>
+              <FormSelect name="laundryService" value={formData.laundryService} onChange={handleChange} required>
+                <option value="">Select Service</option>
+                <option value="in-home">In Home Laundry</option>
+                <option value="mobile">Mobile Pickup/Dropoff</option>
+              </FormSelect>
             </FormGroup>
           </Form>
         </Col>

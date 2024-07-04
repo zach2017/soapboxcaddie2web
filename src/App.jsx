@@ -3,7 +3,7 @@ import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import ProtectedPage1 from './pages/protected/ProtectedPage1';
+import LaundryForm from './pages/protected/LaundryForm';
 import ProtectedPage2 from './pages/protected/ProtectedPage2';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/protected1" element={
           <ProtectedRoute>
-            <ProtectedPage1 />
+            <LaundryForm />
           </ProtectedRoute>
         } />
         <Route path="/protected2" element={

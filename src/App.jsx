@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import LaundryForm from './pages/protected/LaundryForm';
 import ProtectedPage2 from './pages/protected/ProtectedPage2';
+import Signup from './pages/protected/Signup';
 
 function App() {
   return (
@@ -15,6 +16,11 @@ function App() {
         <Route path="/laundryservice" element={
           <ProtectedRoute>
             <LaundryForm />
+          </ProtectedRoute>
+        } />
+         <Route path="/signup" element={
+          <ProtectedRoute>
+            <Signup />
           </ProtectedRoute>
         } />
         <Route path="/caddieservice" element={

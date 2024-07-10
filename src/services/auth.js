@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://71da-2600-6c58-593f-a178-b975-85df-a3a9-83b9.ngrok-free.app'; 
+const API_URL =  process.env.API_URL 
 
 export const twilioAuth = {
   isAuthenticated: false,

@@ -10,7 +10,7 @@ export default function Home() {
             <div class="col">
               <div class="card shadow-sm">
 
-                <center><img src="/public/caddie.PNG" width="200" height="300" /></center>
+                <center><img src="/caddie.PNG" width="200" height="300" /></center>
                 <div class="card-body">
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -24,7 +24,7 @@ export default function Home() {
             </div>
             <div class="col">
               <div class="card shadow-sm">
-                <center> <img src="/public/deliver.PNG" width="200" height="300" /></center>
+                <center> <img src="/deliver.PNG" width="200" height="300" /></center>
                 <div class="card-body">
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -38,7 +38,7 @@ export default function Home() {
             </div>
             <div class="col">
               <div class="card shadow-sm">
-                <center><img src="/public/bag.PNG" width="200" height="300" /></center>
+                <center><img src="/bag.PNG" width="200" height="300" /></center>
                 <div class="card-body">
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">

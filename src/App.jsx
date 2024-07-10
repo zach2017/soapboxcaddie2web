@@ -2,26 +2,20 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home';
-import Login from './pages/Login';
+
 import LaundryForm from './pages/protected/LaundryForm';
 import ProtectedPage2 from './pages/protected/ProtectedPage2';
-import Signup from './pages/protected/Signup';
-
+import Login from './pages/Login';
 
 function App() {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={ <Login/>} />
         <Route path="/laundryservice" element={
           <ProtectedRoute>
             <LaundryForm />
-          </ProtectedRoute>
-        } />
-         <Route path="/signup" element={
-          <ProtectedRoute>
-            <Signup />
           </ProtectedRoute>
         } />
         <Route path="/caddieservice" element={

@@ -7,6 +7,7 @@ import LaundryForm from './pages/protected/LaundryForm';
 import ProtectedPage2 from './pages/protected/ProtectedPage2';
 import Signup from './pages/protected/Signup';
 
+
 function App() {
   return (
     <Layout>

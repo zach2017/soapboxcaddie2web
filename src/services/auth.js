@@ -38,12 +38,16 @@ export const twilioAuth = {
       data.append('key', apikey)
       data.append('code',code)
       this.phoneNumber = phoneNumber
-      const response = await axiosInstance.post(`${baseurl}/verify`,data);
+      await axiosInstance.post(`${baseurl}/verify`,data).then(response => {
+        // Handle the response from the redirected URL
+        console.log('Response:', response.data);
+    
       if (response.data.includes("approved")) {
         this.isAuthenticated = true;
         return true;
-      }
-      return false;
+      } 
+    })
+    if (this.isAuthenticated) return true;
     } catch (error) {
       console.error('Error verifying code:', error);
       return false;

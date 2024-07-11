@@ -3,13 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import { twilioAuth } from '../services/auth';
 import { Form, Button, Alert } from 'react-bootstrap';
 
+
+
 export default function Login() {
   const navigate = useNavigate();
   const [phoneNumber, setPhoneNumber] = useState('');
   const [verificationCode, setVerificationCode] = useState('');
   const [step, setStep] = useState('phone');
   const [error, setError] = useState('');
-
+  const baseurl = import.meta.env.VITE_API_URL;
   const handleSendVerification = async (e) => {
     e.preventDefault();
     setError('');
@@ -24,7 +26,7 @@ export default function Login() {
   const handleVerifyCode = async (e) => {
     e.preventDefault();
     setError('');
-    const success = await twilioAuth.verifyCode(verificationCode);
+    const success = await twilioAuth.verifyCode(verificationCode, phoneNumber);
     if (success) {
       navigate('/laundryservice');
     } else {

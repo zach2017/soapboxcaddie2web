@@ -1,16 +1,21 @@
 import axios from 'axios';
 
-const API_URL =  process.env.API_URL 
-
 export const twilioAuth = {
   isAuthenticated: false,
   phoneNumber: null,
+  baseurl: null,
 
   async sendVerification(phoneNumber) {
     try {
-      const response = await axios.get(`${API_URL}/getcode?phone=${phoneNumber}`);
+      const baseurl = import.meta.env.VITE_API_URL;
+      const apikey = import.meta.env.VITE_API_KEY;
+      const data = new FormData();
+      data.append('phone', phoneNumber)
+      data.append('key', apikey)
+      const response = await axios.post(`${baseurl}/getcode`,data);
       if (response.data.includes("Received:")) {
         this.phoneNumber = '+1' + phoneNumber;
+        this.baseurl = baseurl
         return true;
       }
       return false;
@@ -20,11 +25,16 @@ export const twilioAuth = {
     }
   },
 
-  async verifyCode(code) {
+  async verifyCode(code, phoneNumber) {
     try {
-      const args = `${API_URL}/verify?phone=${this.phoneNumber}&code=${code}`
-      this.phoneNumber = this.phoneNumber
-      const response = await axios.get(args);
+      const baseurl = import.meta.env.VITE_API_URL;
+      const apikey = import.meta.env.VITE_API_KEY;
+      const data = new FormData();
+      data.append('phone', phoneNumber)
+      data.append('key', apikey)
+      data.append('code',code)
+      this.phoneNumber = phoneNumber
+      const response = await axios.post(`${baseurl}/verify`,data);
       if (response.data.includes("approved")) {
         this.isAuthenticated = true;
         return true;

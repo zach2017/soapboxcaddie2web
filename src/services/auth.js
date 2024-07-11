@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+const axiosInstance = axios.create({
+  maxRedirects: 3, // Set the maximum number of redirects
+});
+
 export const twilioAuth = {
   isAuthenticated: false,
   phoneNumber: null,
@@ -12,7 +16,7 @@ export const twilioAuth = {
       const data = new FormData();
       data.append('phone', phoneNumber)
       data.append('key', apikey)
-      const response = await axios.post(`${baseurl}/getcode`,data);
+      const response = await axiosInstance.post(`${baseurl}/getcode`,data);
       if (response.data.includes("Received:")) {
         this.phoneNumber = '+1' + phoneNumber;
         this.baseurl = baseurl
@@ -34,7 +38,7 @@ export const twilioAuth = {
       data.append('key', apikey)
       data.append('code',code)
       this.phoneNumber = phoneNumber
-      const response = await axios.post(`${baseurl}/verify`,data);
+      const response = await axiosInstance.post(`${baseurl}/verify`,data);
       if (response.data.includes("approved")) {
         this.isAuthenticated = true;
         return true;

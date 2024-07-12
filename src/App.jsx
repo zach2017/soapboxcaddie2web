@@ -7,6 +7,9 @@ import LaundryForm from './pages/protected/LaundryForm';
 import ProtectedPage2 from './pages/protected/ProtectedPage2';
 import Login from './pages/Login';
 import TopMenu from './components/TopMenu';
+import PersonalInfoForm from './pages/PersonalInfoForm';
+import BaggageForm from './pages/BaggageForm';
+import PaymentForm2 from './pages/PaymentForm';
 
 function App() {
   return (
@@ -24,6 +27,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<PersonalInfoForm />} />
+          <Route path="/login2" element={<BaggageForm />} />
+          <Route path="/login3" element={<PaymentForm2 />} />
+
+         
           <Route path="/laundryservice" element={
             <ProtectedRoute>
               <LaundryForm />

@@ -4,6 +4,8 @@ const axiosInstance = axios.create({
   maxRedirects: 3, // Set the maximum number of redirects
 });
 
+axiosInstance.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+
 export const twilioAuth = {
   isAuthenticated: false,
   phoneNumber: null,

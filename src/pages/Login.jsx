@@ -3,11 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { twilioAuth } from '../services/auth';
 import { Form, Button, Alert } from 'react-bootstrap';
 
-
-
 export default function Login() {
   const navigate = useNavigate();
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [isValid, setIsValid] = useState(true);
   const [verificationCode, setVerificationCode] = useState('');
   const [step, setStep] = useState('phone');
   const [error, setError] = useState('');
@@ -23,6 +22,25 @@ export default function Login() {
     }
   };
 
+
+  const handlePhoneChange = (e) => {
+    const input = e.target.value.replace(/\D/g, '');
+    let formatted = '';
+
+    if (input.length > 0) {
+      formatted += '(' + input.substr(0, 3);
+      if (input.length > 3) {
+        formatted += ') ' + input.substr(3, 3);
+        if (input.length > 6) {
+          formatted += '-' + input.substr(6, 4);
+        }
+      }
+    }
+
+    setPhoneNumber(formatted);
+    setIsValid(input.length === 10);
+  };
+
   const handleVerifyCode = async (e) => {
     e.preventDefault();
     setError('');
@@ -35,18 +53,21 @@ export default function Login() {
   };
 
   return (
+    <>
+    <p>Login using your phone.   Enter phone number and it will send you a code.</p>
     <Form onSubmit={step === 'phone' ? handleSendVerification : handleVerifyCode}>
       {error && <Alert variant="danger">{error}</Alert>}
-      
       {step === 'phone' ? (
         <Form.Group className="mb-3" controlId="formBasicPhone">
-          <Form.Label>MobilePhone Number</Form.Label>
+          <Form.Label>Cell Phone Number</Form.Label>
           <Form.Control 
             type="tel" 
             placeholder="Enter phone number" 
             value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
+            onChange={handlePhoneChange}
+            //onChange={(e) => setPhoneNumber(e.target.value)}
             required 
+            style={{ width: '15ch' }}
           />
           <Button variant="primary" type="submit" className="mt-3">
             Send Verification Code
@@ -62,11 +83,12 @@ export default function Login() {
             onChange={(e) => setVerificationCode(e.target.value)}
             required 
           />
-          <Button variant="primary" type="submit" className="mt-3">
+          <Button variant="primary" type="submit" className="mt-3"  disabled={!isValid}>
             Verify Code
           </Button>
         </Form.Group>
       )}
     </Form>
+    </>
   );
 }

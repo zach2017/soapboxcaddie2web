@@ -2,9 +2,13 @@ import axios from 'axios';
 
 const axiosInstance = axios.create({
   maxRedirects: 3, // Set the maximum number of redirects
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    'Content-Type': 'text/plain',
+  }
+
 });
 
-axiosInstance.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 export const twilioAuth = {
   isAuthenticated: false,

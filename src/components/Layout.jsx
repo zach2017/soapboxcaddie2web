@@ -13,14 +13,15 @@ export default function Layout({ children }) {
   };
 
   return (
-    <div class="container justify-content-center">
+    <div class="container">
       <div class="container">
+        <hr/>
         <center><Image
           src="/logo.PNG"
           height='180px'
           width='458px'
         /></center>
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" >
+        <header class="d-flex   py-3 mb-4 border-bottom" >
           <ul class="nav nav-pills">
             <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
             {twilioAuth.isAuthenticated ? (
@@ -33,7 +34,8 @@ export default function Layout({ children }) {
           </ul>
         </header>
       </div>
-      <center>      <Container className="mt-4 mainback">
+      <center>      
+        <Container>
         {children}
       </Container>
       </center>

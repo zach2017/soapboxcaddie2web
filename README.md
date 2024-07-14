@@ -1,8 +1,16 @@
-# React + Vite
+# Bootstrap w/ Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Include [Bootstrap](https://getbootstrap.com)'s source Sass and individual JavaScript plugins with [Vite](https://vitejs.dev/).
 
-Currently, two official plugins are available:
+## Edit in browser
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/twbs/examples/tree/main/vite?file=src%2Findex.html)
+
+## How to use
+
+```sh
+git clone https://github.com/twbs/examples.git
+cd examples/vite/
+npm install
+npm start
+```

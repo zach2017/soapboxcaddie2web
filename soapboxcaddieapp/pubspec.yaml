@@ -1,0 +1,23 @@
+name: laundry_service_app
+description: A SoapboxCaddie for laundry service like Uber with local storage.
+version: 1.0.0
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.0.0
+  shared_preferences: ^2.0.15
+  cupertino_icons: ^1.0.2
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logo.png
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo.png"
